@@ -1,0 +1,168 @@
+# NutriFit
+
+A modern Next.js application for discovering and sharing high-protein recipes designed for athletes and active individuals.
+
+## Live Demo
+
+🔗 [View Live Demo](#) — _Link to be added_
+
+## Preview
+
+[Insert screenshot or GIF here]
+
+## Features
+
+- **Meal Discovery** – Browse a curated collection of high-protein, athlete-friendly recipes
+- **Community Sharing** – Share your own recipes with other users and get feedback
+- **Image Upload** – Upload meal photos directly to AWS S3 with secure storage
+- **Fast Search & Navigation** – Instantly find meals by category, protein content, or dietary needs
+- **Responsive Design** – Fully optimized for mobile, tablet, and desktop experiences
+- **XSS Protection** – Secure content handling to protect against malicious input
+- **Dynamic Routing** – Efficient meal detail pages with URL-friendly slugs
+
+## Tech Stack
+
+- **Framework**: Next.js 15
+- **UI Library**: React 19
+- **Styling**: CSS Modules
+- **Database**: SQLite (better-sqlite3)
+- **Cloud Storage**: AWS S3
+- **Utilities**: Slugify (URL generation), XSS (security), ESLint (code quality)
+- **Runtime**: Node.js
+
+## Installation
+
+### Prerequisites
+
+- Node.js 18+ and npm/yarn installed
+- AWS S3 bucket configured (for image uploads)
+- SQLite3 support
+
+### Setup Instructions
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/yourusername/nutrifit.git
+   cd nutrifit
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Configure environment variables**
+   - Create a `.env.local` file in the root directory
+   - Add AWS S3 credentials and bucket configuration:
+     ```
+     AWS_REGION=eu-central-1
+     AWS_S3_BUCKET=your-bucket-name
+     AWS_ACCESS_KEY_ID=your-access-key
+     AWS_SECRET_ACCESS_KEY=your-secret-key
+     ```
+
+4. **Initialize the database**
+
+   ```bash
+   node initdb.js
+   ```
+
+5. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+   The app will be available at `http://localhost:3000`
+
+### Other Commands
+
+- `npm run build` – Build for production
+- `npm start` – Run the production server
+- `npm run lint` – Run ESLint
+
+## Project Structure
+
+```
+nutrifit/
+├── app/                           # Next.js App Router
+│   ├── layout.js                  # Root layout
+│   ├── page.js                    # Homepage
+│   ├── globals.css                # Global styles
+│   ├── meals/                     # Meals section
+│   │   ├── page.js                # All meals page
+│   │   ├── error.js               # Error boundary
+│   │   ├── loading.js             # Loading state
+│   │   ├── [slug]/                # Dynamic meal detail page
+│   │   │   └── page.js
+│   │   └── share/                 # Share new meal page
+│   │       └── page.js
+│   └── community/                 # Community section
+│       └── page.js
+├── components/                    # Reusable React components
+│   ├── main-header/               # Navigation header
+│   ├── footer/                    # Footer component
+│   ├── images/                    # Image-related components
+│   │   └── image-slideshow.js
+│   └── meals/                     # Meal-specific components
+│       ├── meal-item.js
+│       ├── meals-grid.js
+│       ├── image-picker.js
+│       └── meals-form-submit.js
+├── lib/
+│   ├── meals.js                   # Database queries & S3 operations
+│   ├── actions.js                 # Server actions (forms)
+│   └── deleteAction.js            # Deletion operations
+├── public/                        # Static assets
+├── assets/                        # Design assets
+├── jsconfig.json                  # JavaScript configuration
+├── next.config.js                 # Next.js configuration
+├── package.json                   # Dependencies & scripts
+├── initdb.js                      # Database initialization script
+└── README.md                      # This file
+```
+
+## Key Technical Decisions
+
+### Server Components by Default
+
+Leverages Next.js 15's React Server Components for improved performance, reduced JavaScript bundle size, and direct database query capability without API layers.
+
+### SQLite for Data Persistence
+
+Chose SQLite with better-sqlite3 for reliable, lightweight local data storage. Suitable for this scale while maintaining ACID compliance.
+
+### AWS S3 for Image Storage
+
+Images are uploaded directly to AWS S3 rather than stored locally. This approach:
+
+- Provides scalable, reliable cloud storage
+- Reduces server disk usage
+- Enables fast image delivery via CloudFront CDN
+
+### Dynamic Routes with Slugs
+
+Meal detail pages use dynamic routing (`[slug]/`) with URL-friendly slugs generated by Slugify. This improves SEO and provides clean, readable URLs.
+
+### CSS Modules for Styling
+
+Component-scoped CSS modules prevent naming conflicts and maintain style encapsulation without heavy dependencies.
+
+### Security-First Approach
+
+Implements XSS sanitization via the xss library to protect against malicious content injection in user-generated meal descriptions and instructions.
+
+### Server Actions for Forms
+
+Form submissions use Next.js Server Actions (`actions.js`) to handle data mutations securely without client-side backend calls.
+
+## Future Improvements
+
+- **User Authentication** – Add login/signup with email verification
+- **Ratings & Reviews** – Allow users to rate and comment on shared meals
+- **Advanced Search** – Implement full-text search with filters (protein, calories, prep time)
+
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.

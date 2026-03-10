@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Montserrat:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Quicksand", sans-serif;
+}
+
+:root {
+  --color-bg: #f2fbf7;
+  --color-secondary-bg: #d6d6d6;
+  --color-primary-header: #a8e6cf;
+  --color-primary-text: #073b4c;
+  --color-primary-text-disabled: #9aa7ac;
+  --color-secondary-text: #4f6b70;
+  --color-link-hover: #118ab2;
+  --color-primary-btn: #ffd166;
+  --color-primary-btn-hover: #e8b400;
+  --color-primary-btn-disabled: #f2e3a8;
+  --color-secondary-btn: #e5e5e5;
+  --color-secondary-btn-hover: #c8c8c8;
+  --color-delete-btn: #ef476f;
+  --color-delete-btn-hover: #d8345f;
+  --color-white: #fff;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-primary-text);
+}
+
+h1 {
+  font-size: 48px;
+  span {
+    font-size: 48px;
+  }
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+p,
+a,
+button,
+li,
+input,
+textarea {
+  font-size: 20px;
+}
+
+span,
+label {
+  font-size: 16px;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #05668d 0%, #00a896 60%, #a8e6cf 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.not-found,
+.error {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.not-found h1,
+.error h1 {
+  font-size: 5rem;
+  margin: 0px;
+  font-weight: 900;
+  text-transform: uppercase;
+  background-size: cover;
+  background-position: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.not-found p,
+.error p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-secondary-text);
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 40px;
+    span {
+      font-size: 40px;
+    }
+  }
+  h2 {
+    font-size: 32px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  p,
+  a,
+  button,
+  li,
+  input,
+  textarea {
+    font-size: 18px;
+  }
+  span,
+  label {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+    span {
+      font-size: 36px;
+    }
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  p,
+  a,
+  button,
+  li,
+  input,
+  textarea {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,48 @@
+.header {
+  gap: 3rem;
+  margin: 3rem auto 5rem auto;
+  width: 90%;
+  max-width: 75rem;
+  color: var(--color-primary-text);
+}
+
+.header h1 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.header p {
+  margin: 0;
+}
+
+.cta a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--color-primary-btn);
+  color: var(--color-primary-text);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.cta a:hover,
+.cta a:active {
+  background: var(--color-primary-btn-hover);
+}
+
+.loading {
+  text-align: center;
+  animation: loading 1.2s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    color: #d0ede4;
+  }
+  50% {
+    color: #00a896;
+  }
+  100% {
+    color: #d0ede4;
+  }
+}

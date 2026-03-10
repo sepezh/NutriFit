@@ -1,0 +1,99 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background: white;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  width: fit-content;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.cancel {
+  border: 0;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  background: var(--color-secondary-btn);
+  color: var(--color-primary-text);
+}
+
+.cancel:hover,
+.cancel:focus {
+  background: var(--color-secondary-bg);
+}
+
+.delete-recipe {
+  width: 60%;
+  margin: 2rem auto;
+}
+
+.delete-btn {
+  border: 0;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font: inherit;
+  background: var(--color-delete-btn);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.delete-btn:hover,
+.delete-btn:active {
+  background: var(--color-delete-btn-hover);
+}
+
+.delete {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font: inherit;
+  background: var(--color-delete-btn);
+  color: var(--color-white);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.delete:hover,
+.delete:active {
+  background: var(--color-delete-btn-hover);
+}
+
+@media (max-width: 1280px) {
+  .delete-recipe {
+    width: 80%;
+  }
+}
+
+@media (max-width: 972px) {
+  .delete-recipe {
+    padding-left: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .delete-recipe {
+    padding-left: 1rem;
+  }
+}

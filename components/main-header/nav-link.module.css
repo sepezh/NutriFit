@@ -1,0 +1,16 @@
+.link {
+  text-decoration: none;
+  color: var(--color-primary-text);
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.link:hover,
+.link:active {
+  color: var(--color-link-hover);
+}
+
+.active {
+  color: var(--color-link-hover);
+}

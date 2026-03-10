@@ -1,0 +1,158 @@
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+  gap: 3rem;
+  margin: auto;
+  width: 80%;
+}
+
+.imageWrapper {
+  flex: 0.5;
+  padding-top: 13px; /* To maintain 3:2 aspect ratio */
+}
+
+.image {
+  position: relative;
+  width: 30rem;
+  height: 20rem;
+}
+
+.header img {
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  animation: fade-slide-in-from-left 1s ease-out forwards;
+}
+
+.headerText {
+  color: var(--color-primary-text);
+  flex: 1;
+  animation: fade-slide-in-from-right 1s ease-out forwards;
+
+  h1 {
+    margin: 0;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  :global(p) {
+    font-size: 24px;
+  }
+}
+
+.creator {
+  font-style: italic;
+}
+
+.creator a:hover,
+.creator a:active {
+  background: linear-gradient(135deg, #0780b0 0%, #19bfae 60%, #c8f3e3 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.instructions {
+  line-height: 1.5;
+  color: var(--color-primary-text);
+  background: #f7fffb;
+  border-radius: 4px;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 8px 20px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+  width: 60%;
+  margin: 2rem auto;
+  animation: fade-slide-in-from-bottom 1s ease-out forwards;
+}
+
+@keyframes fade-slide-in-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-slide-in-from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-slide-in-from-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1280px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+
+  .imageWrapper {
+    flex: 1;
+    padding-top: 0;
+  }
+
+  .headerText {
+    text-align: center;
+  }
+
+  .instructions {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .headerText {
+    :global(p) {
+      font-size: 20px;
+    }
+  }
+
+  .instructions {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .headerText {
+    :global(p) {
+      font-size: 18px;
+    }
+  }
+
+  .instructions {
+    padding: 1rem;
+  }
+}
