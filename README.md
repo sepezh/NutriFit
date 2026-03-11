@@ -2,9 +2,15 @@
 
 A modern Next.js application for discovering and sharing high-protein recipes designed for athletes and active individuals.
 
+## About
+
+NutriFit provides a centralized platform where active people can explore and contribute recipe ideas focused on high-protein nutrition. It addresses the common challenge of finding practical meal options that support training goals and healthy lifestyles.
+
+The project emphasizes a clean, responsive experience and collaborative features that help users quickly discover, upload, and navigate content across devices. By streamlining meal discovery and sharing, NutriFit demonstrates a commitment to usability and community-driven design.
+
 ## Live Demo
 
-🔗 [View Live Demo](#) — _Link to be added_
+🔗 [View Live Demo](https://nutri-fit-nu.vercel.app/) — _Link to be added_
 
 ## Preview
 
@@ -156,12 +162,24 @@ Implements XSS sanitization via the xss library to protect against malicious con
 
 Form submissions use Next.js Server Actions (`actions.js`) to handle data mutations securely without client-side backend calls.
 
+## Challenges
+
+Implementing secure image uploads directly to AWS S3 from the client required coordinating presigned URLs while keeping credentials safe. The solution was to generate presigned PUT URLs on the server and validate file types before returning them, ensuring uploads never exposed AWS keys.
+
+Managing dynamic routing with slugs that stay unique and SEO-friendly presented edge cases when recipes had similar names. A slug generation step now checks for conflicts in the database and appends a counter when necessary, preventing collisions without user intervention.
+
+## Results
+
+- Delivered a fully responsive recipe platform with secure media handling and dynamic content routing.  
+- Enabled community-driven sharing, increasing engagement through user uploads and feedback.  
+- Optimized page load times using server components and direct database queries.  
+- Demonstrated proficiency in modern Next.js features and cloud integration patterns.
+
 ## Future Improvements
 
 - **User Authentication** – Add login/signup with email verification
 - **Ratings & Reviews** – Allow users to rate and comment on shared meals
 - **Advanced Search** – Implement full-text search with filters (protein, calories, prep time)
-
 
 ## License
 
